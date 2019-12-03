@@ -17,16 +17,16 @@ open class Day: Identifiable {
     public init() {
         loadInput()
     }
-
-    private func loadInput() {
+    
+    open func getDataInput() -> Data? {
         guard let url = Bundle.main.url(forResource: "Day\(number)", withExtension: "txt"),
-            let data = try? String(contentsOf: url, encoding: .utf8) else {
-                self.input = []
-                return
+            let data = try? Data(contentsOf: url) else {
+                return nil
         }
-        let elements = data.components(separatedBy: .newlines)
-        self.input = elements.compactMap({Int($0)})
+        return data
     }
+
+    open func loadInput() {}
 
     open func getResult() -> String { return "" }
 }
