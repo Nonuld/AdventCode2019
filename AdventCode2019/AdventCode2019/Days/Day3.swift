@@ -12,7 +12,7 @@ import Foundation
 class Day3: Day {
     override var number: Int { return 3 }
 
-    override var status: DayStatus { return .notDone }
+    override var status: DayStatus { return .done }
 
     private var input: [[Direction]]!
 

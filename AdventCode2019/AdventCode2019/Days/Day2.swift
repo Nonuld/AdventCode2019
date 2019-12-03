@@ -11,7 +11,7 @@ import AdventCodeCore
 class Day2: Day {
     override var number: Int { return 2 }
 
-    override var status: DayStatus { return .notDone }
+    override var status: DayStatus { return .done }
 
     var input: [Int]!
 
