@@ -12,6 +12,8 @@ class Day1: Day {
     override var number: Int { return 1 }
 
     override var status: DayStatus { return .done }
+
+    var input: [Int]!
     
     override func loadInput() {
         guard let data = getDataInput(),

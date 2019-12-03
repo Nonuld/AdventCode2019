@@ -13,6 +13,8 @@ class Day2: Day {
 
     override var status: DayStatus { return .notDone }
 
+    var input: [Int]!
+
     override func loadInput() {
         guard let data = getDataInput(),
             let str = String(data: data, encoding: .utf8) else {
@@ -23,7 +25,6 @@ class Day2: Day {
     }
 
     override func getResult() -> String {
-        let input: [Int]! = self.input
         for i in 0...99 {
             for j in 0...99 {
                 if get(noun: i, verb: j, input: input) == 19690720 {

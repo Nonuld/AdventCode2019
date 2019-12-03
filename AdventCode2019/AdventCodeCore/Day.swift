@@ -9,7 +9,6 @@
 import Foundation
 
 open class Day: Identifiable {
-    open var input: [Int]!
     open var number: Int { return 0 }
 
     open var status: DayStatus { return .notDone }
