@@ -14,9 +14,9 @@ extension DayStatus {
         var imageName: String
         switch self {
         case .done:
-            imageName = "ok"
+            imageName = "done"
         case .notDone:
-            imageName = ""
+            imageName = "notDone"
         }
         return Image(imageName)
     }

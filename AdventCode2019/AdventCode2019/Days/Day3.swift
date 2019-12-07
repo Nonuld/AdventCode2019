@@ -32,7 +32,7 @@ class Day3: Day {
         let leftPoints = calculatePoints(for: leftWire)
         let rightPoints = calculatePoints(for: rightWire)
         let intersections = getIntersections(between: leftPoints, and: rightPoints)
-        let manhattanDistances = intersections.map({calculateManhattanDistance(for: $0)})
+//        let manhattanDistances = intersections.map({calculateManhattanDistance(for: $0)})
         let steps = intersections.map({$0.steps})
         return "\(steps.min() ?? 0)"
     }
