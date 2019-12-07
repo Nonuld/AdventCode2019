@@ -10,8 +10,19 @@ import SwiftUI
 
 struct ContentView: View {
 
+    var day = Day5()
+
     var body: some View {
-        return List(Days.all, rowContent: DayRow.init)
+        HStack {
+            HStack {
+                Text("Day \(day.number)").font(Font.system(size: 20.0))
+                Text("-")
+                Text(day.getResult()).font(Font.system(size: 20.0))
+            }
+            Spacer()
+            day.status.getImage().resizable().frame(width: 32.0, height: 32.0)
+        }.padding(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
+//        return List(Days.all, rowContent: DayRow.init)
     }
 }
 
