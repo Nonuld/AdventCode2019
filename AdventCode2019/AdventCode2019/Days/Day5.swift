@@ -33,9 +33,9 @@ class Day5: Day {
     private func getStepOne(input: [Int]) -> Int {
         var input = input
         var index = 0
+        var value = 0
         var instruction = Instruction.create(from: input[index])
         while instruction.op != .abort {
-            print("Instruction: \(input[index])")
             if instruction.op == .add || instruction.op == .multiply {
                 let leftValue: Int
                 if instruction.firstParameterMode == .immediate {
@@ -60,21 +60,20 @@ class Day5: Day {
                 input[storeInput] = 1
                 index+=2
             } else if instruction.op == .output {
-                print("\(index)")
-                print("\(input[input[index+1]])")
+                value = input[input[index+1]]
                 index+=2
             }
             instruction = Instruction.create(from: input[index])
         }
-        return input[0]
+        return value
     }
 
     private func getStepTwo(input: [Int]) -> Int {
         var input = input
         var index = 0
+        var value = 0
         var instruction = Instruction.create(from: input[index])
         while instruction.op != .abort {
-            print("Instruction: \(input[index])")
             let op = instruction.op
             if op == .add || op == .multiply {
                 let leftValue: Int
@@ -100,8 +99,7 @@ class Day5: Day {
                 input[storeInput] = 5
                 index+=2
             } else if op == .output {
-                print("\(index)")
-                print("\(input[input[index+1]])")
+                value = input[input[index+1]]
                 index+=2
             } else if op == .jumpIfTrue {
                 let firstValue: Int
@@ -188,7 +186,7 @@ class Day5: Day {
             }
             instruction = Instruction.create(from: input[index])
         }
-        return input[0]
+        return value
     }
 
     private enum Operator: String {
