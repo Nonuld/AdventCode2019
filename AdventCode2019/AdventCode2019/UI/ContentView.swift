@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
 
-    var day = Day6()
+    var day = Day7()
 
     var body: some View {
         HStack {
