@@ -25,8 +25,8 @@ class Day7: Day {
     }
 
     override func getResult() -> String {
-//        let value = getStepOne(input: input)
-        let value = getStepTwo(input: input)
+        let value = getStepOne(input: input)
+//        let value = getStepTwo(input: input)
         return "\(value)"
     }
 
